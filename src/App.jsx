@@ -22,6 +22,7 @@ function App() {
 
   const [experience, setExperience] = useState([
     {
+      id: 0,
       companyName: "",
       position: "",
       startDate: "",
