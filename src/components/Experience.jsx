@@ -1,21 +1,34 @@
 import DatePicker from "react-datepicker";
 
 export default function Experience({ experience, setExperience }) {
-  function handleChange(e) {
+  function handleChange(e, index) {
     const { name, value } = e.target;
 
     setExperience((prev) => {
-      return {
-        ...prev,
+      const updated = [...prev];
+      updated[index] = {
+        ...updated[index],
         [name]: value,
       };
+      return updated;
     });
   }
   function handleSubmit() {}
 
+  function handleDateChange(date, index, field) {
+    setExperience((prev) => {
+      const updated = [...prev];
+      updated[index] = {
+        ...updated[index],
+        [field]: date,
+      };
+      return updated;
+    });
+  }
+
   return (
     <form onSubmit={handleSubmit}>
-      {experience.map((job) => {
+      {experience.map((job, index) => {
         return (
           <section key={job.id}>
             <div>
@@ -24,7 +37,7 @@ export default function Experience({ experience, setExperience }) {
                 type="text"
                 name="companyName"
                 value={job.companyName}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, index)}
               />
             </div>
             <div>
@@ -33,7 +46,7 @@ export default function Experience({ experience, setExperience }) {
                 type="text"
                 name="position"
                 value={job.position}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, index)}
               />
             </div>
             <div>
@@ -42,12 +55,8 @@ export default function Experience({ experience, setExperience }) {
                 closeOnScroll
                 dateFormat="MM/YYYY"
                 showMonthYearPicker
-                selected={experience.startDate}
-                onChange={(date) =>
-                  setExperience((prev) => {
-                    return { ...prev, startDate: date };
-                  })
-                }
+                selected={job.startDate}
+                onChange={(date) => handleDateChange(date, index, "startDate")}
               />
             </div>
             <div>
@@ -56,12 +65,8 @@ export default function Experience({ experience, setExperience }) {
                 closeOnScroll
                 dateFormat="MM/YYYY"
                 showMonthYearPicker
-                selected={experience.endDate}
-                onChange={(date) =>
-                  setExperience((prev) => {
-                    return { ...prev, endDate: date };
-                  })
-                }
+                selected={job.endDate}
+                onChange={(date) => handleDateChange(date, index, "endDate")}
               />
             </div>
           </section>
