@@ -3,6 +3,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 import "./App.css";
 import GeneralInfo from "./components/GeneralInfo";
+import Education from "./components/Education";
 
 function App() {
   const [info, setInfo] = useState({
@@ -11,15 +12,15 @@ function App() {
     phoneNumber: "",
   });
 
-  // const [education, setEducation] = useState({
-  //   name: "",
-  //   city: "",
-  //   country: "",
-  //   major: "",
-  //   degree: "",
-  //   startDate: null,
-  //   endDate: null,
-  // });
+  const [education, setEducation] = useState({
+    schoolName: "",
+    city: "",
+    country: "",
+    major: "",
+    degree: "",
+    startDate: null,
+    endDate: null,
+  });
 
   // const [experience, setExperience] = useState([
   //   {
@@ -35,6 +36,7 @@ function App() {
     <div className="container">
       <div className="left">
         <GeneralInfo data={info} setData={setInfo} />
+        <Education data={education} setData={setEducation} />
       </div>
 
       <div className="right">
