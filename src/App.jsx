@@ -11,6 +11,8 @@ function App() {
     name: "",
     email: "",
     phoneNumber: "",
+    address: "",
+    objective: "",
   });
 
   const [education, setEducation] = useState({
@@ -28,7 +30,6 @@ function App() {
     position: "",
     startDate: null,
     endDate: null,
-    main: "",
   });
 
   return (

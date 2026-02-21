@@ -49,6 +49,24 @@ export default function GeneralInfo({ data, setData }) {
               onChange={handleChange}
             />
           </div>
+          <div>
+            <label>Address:</label>
+            <input
+              type="text"
+              name="address"
+              value={draft.address}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label>Objective:</label>
+            <input
+              type="text"
+              name="objective"
+              value={draft.objective}
+              onChange={handleChange}
+            />
+          </div>
           <button type="submit">Submit</button>
         </form>
       ) : (
