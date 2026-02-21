@@ -52,7 +52,13 @@ export default function GeneralInfo({ data, setData }) {
           <button type="submit">Submit</button>
         </form>
       ) : (
-        <button type="button" onClick={() => setSubmitted(false)}>
+        <button
+          type="button"
+          onClick={() => {
+            setSubmitted(false);
+            setDraft(data);
+          }}
+        >
           Edit
         </button>
       )}

@@ -1,100 +1,88 @@
-// import DatePicker from "react-datepicker";
+import DatePicker from "react-datepicker";
+import { useState } from "react";
 
-// export default function Experience({ draft, setDraft, submit }) {
+export default function Experience({ data, setData }) {
+  const [draft, setDraft] = useState(data);
+  const [submitted, setSubmitted] = useState(false);
 
-//   function handleChange(e, index) {
-//     const { name, value } = e.target;
+  function handleChange(e) {
+    const { name, value } = e.target;
 
-//     setExperience((prev) => {
-//       const updated = [...prev];
-//       updated[index] = {
-//         ...updated[index],
-//         [name]: value,
-//       };
-//       return updated;
-//     });
-//   }
-//   function handleSubmit() {
-//     submit();
+    setDraft((prev) => {
+      return { ...prev, [name]: value };
+    });
+  }
 
-//   }
+  function handleSubmit(e) {
+    e.preventDefault();
+    setData(draft);
+    setSubmitted(true);
+  }
 
-//   function handleDateChange(date, index, field) {
-//     setExperience((prev) => {
-//       const updated = [...prev];
-//       updated[index] = {
-//         ...updated[index],
-//         [field]: date,
-//       };
-//       return updated;
-//     });
-//   }
-
-//   function handleAddExperience() {
-//     setExperience((prev) => {
-//       return [
-//         ...prev,
-//         {
-//           id: Date.now(),
-//           companyName: "",
-//           position: "",
-//           startDate: null,
-//           endDate: null,
-//         },
-//       ];
-//     });
-//   }
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       {experience.map((job, index) => {
-//         return (
-//           <section key={job.id}>
-//             <div>
-//               <label>Company Name:</label>
-//               <input
-//                 type="text"
-//                 name="companyName"
-//                 value={job.companyName}
-//                 onChange={(e) => handleChange(e, index)}
-//               />
-//             </div>
-//             <div>
-//               <label>Position:</label>
-//               <input
-//                 type="text"
-//                 name="position"
-//                 value={job.position}
-//                 onChange={(e) => handleChange(e, index)}
-//               />
-//             </div>
-//             <div>
-//               <label>Start Date:</label>
-//               <DatePicker
-//                 closeOnScroll
-//                 dateFormat="MM/yyyy"
-//                 showMonthYearPicker
-//                 selected={job.startDate}
-//                 onChange={(date) => handleDateChange(date, index, "startDate")}
-//               />
-//             </div>
-//             <div>
-//               <label>End Date:</label>
-//               <DatePicker
-//                 closeOnScroll
-//                 dateFormat="MM/yyyy"
-//                 showMonthYearPicker
-//                 selected={job.endDate}
-//                 onChange={(date) => handleDateChange(date, index, "endDate")}
-//               />
-//             </div>
-//           </section>
-//         );
-//       })}
-//       <button type="button" onClick={handleAddExperience}>
-//         Add Experience
-//       </button>
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// }
+  return (
+    <section>
+      <h2>Work Experience</h2>
+      {!submitted ? (
+        <form onSubmit={handleSubmit}>
+          <div>
+            <label>Company Name:</label>
+            <input
+              type="text"
+              name="companyName"
+              value={draft.companyName}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label>Position:</label>
+            <input
+              type="text"
+              name="position"
+              value={draft.position}
+              onChange={handleChange}
+            />
+          </div>
+          <div>
+            <label>Start Date:</label>
+            <DatePicker
+              closeOnScroll
+              dateFormat="MM/yyyy"
+              showMonthYearPicker
+              selected={draft.startDate}
+              onChange={(date) =>
+                setDraft((prev) => {
+                  return { ...prev, startDate: date };
+                })
+              }
+            />
+          </div>
+          <div>
+            <label>End Date:</label>
+            <DatePicker
+              closeOnScroll
+              dateFormat="MM/yyyy"
+              showMonthYearPicker
+              selected={draft.endDate}
+              onChange={(date) =>
+                setDraft((prev) => {
+                  return { ...prev, endDate: date };
+                })
+              }
+            />
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      ) : (
+        <button
+          type="button"
+          onClick={() => {
+            setSubmitted(false);
+            setDraft(data);
+          }}
+        >
+          Edit
+        </button>
+      )}
+    </section>
+  );
+}

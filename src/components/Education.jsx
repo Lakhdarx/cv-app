@@ -13,7 +13,7 @@ export default function Education({ data, setData }) {
     });
   }
 
-  function onSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setData(draft);
     setSubmitted(true);
@@ -23,7 +23,7 @@ export default function Education({ data, setData }) {
     <section>
       <h2>Educational Experience</h2>
       {!submitted ? (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
           <div>
             <label>School Name:</label>
             <input
@@ -100,7 +100,13 @@ export default function Education({ data, setData }) {
           <button type="submit">Submit</button>
         </form>
       ) : (
-        <button type="button" onClick={() => setSubmitted(false)}>
+        <button
+          type="button"
+          onClick={() => {
+            setSubmitted(false);
+            setDraft(data);
+          }}
+        >
           Edit
         </button>
       )}
