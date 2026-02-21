@@ -19,7 +19,7 @@ export default function GeneralInfo({ data, setData }) {
   }
   return (
     <section>
-      <h2>General Information</h2>
+      <h3>General Information</h3>
       {!submitted ? (
         <form onSubmit={handleSubmit}>
           <div>
@@ -60,8 +60,7 @@ export default function GeneralInfo({ data, setData }) {
           </div>
           <div>
             <label>Objective:</label>
-            <input
-              type="text"
+            <textarea
               name="objective"
               value={draft.objective}
               onChange={handleChange}

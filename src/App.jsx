@@ -5,6 +5,7 @@ import "./App.css";
 import GeneralInfo from "./components/GeneralInfo";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
+import CvPreview from "./components/CvPreview";
 
 function App() {
   const [info, setInfo] = useState({
@@ -41,7 +42,7 @@ function App() {
       </div>
 
       <div className="right">
-        <CVPreview info={info} />
+        <CvPreview info={info} education={education} experience={experience} />
       </div>
     </div>
   );

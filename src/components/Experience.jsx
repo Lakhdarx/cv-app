@@ -21,7 +21,7 @@ export default function Experience({ data, setData }) {
 
   return (
     <section>
-      <h2>Work Experience</h2>
+      <h3>Work Experience</h3>
       {!submitted ? (
         <form onSubmit={handleSubmit}>
           <div>
