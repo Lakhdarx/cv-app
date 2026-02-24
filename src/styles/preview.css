@@ -1,0 +1,49 @@
+main {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 16px;
+  padding: 20px 30px;
+}
+
+main img {
+  height: 200px;
+  width: 180px;
+}
+
+main .info h2 {
+  margin-bottom: 8px;
+}
+
+main .info .right .more-info {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  row-gap: 8px;
+}
+
+main .info label {
+  font-weight: bold;
+}
+
+main .info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+main .info .left {
+  display: grid;
+  align-items: center;
+}
+
+main .education .more-info,
+main .experience .more-info {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+main .experience .more-info {
+}

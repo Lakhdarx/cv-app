@@ -63,10 +63,10 @@ export default function Education({ data, setData }) {
           <div>
             <label>Degree:</label>
             <select name="degree" onChange={handleChange} value={draft.degree}>
-              <option value="associate">Associate</option>
-              <option value="bachelor">Bachelor</option>
-              <option value="master">Master</option>
-              <option value="doctoral">Doctoral</option>
+              <option value="Associate">Associate</option>
+              <option value="Bachelor">Bachelor</option>
+              <option value="Master">Master</option>
+              <option value="Doctoral">Doctoral</option>
             </select>
           </div>
           <div>

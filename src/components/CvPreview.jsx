@@ -1,5 +1,6 @@
-import profilePic from "../assets/x.png";
+import profilePic from "../assets/profile.jpg";
 import { format } from "date-fns";
+import "../styles/preview.css";
 
 export default function CvPreview({ info, education, experience }) {
   return (
@@ -9,7 +10,7 @@ export default function CvPreview({ info, education, experience }) {
           <img src={profilePic} alt="Profile Picture sample" />
         </div>
         <div className="right">
-          <h1>{info.name}</h1>
+          <h2>{info.name}</h2>
           <div className="more-info">
             <label>Phone:</label>
             <p>{info.phoneNumber}</p>
@@ -35,7 +36,7 @@ export default function CvPreview({ info, education, experience }) {
             {format(education.endDate, "MMM yyyy")}
           </p>
           <div>
-            <p>
+            <p style={{ fontWeight: "bold" }}>
               {education.schoolName}, {education.city}, {education.country}
             </p>
             <p>
@@ -53,7 +54,7 @@ export default function CvPreview({ info, education, experience }) {
             {format(experience.endDate, "MMM yyyy")}
           </p>
           <div>
-            <p>{experience.companyName}</p>
+            <p style={{ fontWeight: "bold" }}>{experience.companyName}</p>
             <p>{experience.position}</p>
           </div>
         </div>

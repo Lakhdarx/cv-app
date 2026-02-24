@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-
-import "./App.css";
+import "./styles/layout.css";
 import GeneralInfo from "./components/GeneralInfo";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
@@ -34,7 +33,7 @@ function App() {
   });
 
   return (
-    <div className="container">
+    <>
       <div className="left">
         <GeneralInfo data={info} setData={setInfo} />
         <Education data={education} setData={setEducation} />
@@ -44,7 +43,7 @@ function App() {
       <div className="right">
         <CvPreview info={info} education={education} experience={experience} />
       </div>
-    </div>
+    </>
   );
 }
 
