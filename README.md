@@ -6,6 +6,8 @@ This project was created to practice core React concepts.
 
 The goal was to understand how React manages state, component communication, and rendering — not to focus on design.
 
+Live preview: [CV App](https://cv-app-nine-rho.vercel.app/)
+
 ## Features
 
 - Add general information (name, email, phone, etc.)
