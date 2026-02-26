@@ -1,16 +1,30 @@
-# React + Vite
+# CV Builder (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple CV Builder application built with React.
 
-Currently, two official plugins are available:
+This project was created to practice core React concepts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The goal was to understand how React manages state, component communication, and rendering — not to focus on design.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add general information (name, email, phone, etc.)
+- Add education details
+- Add work experience
+- Submit each section individually
+- Live CV preview updates on submit
+- Edit previously submitted sections
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- date-fns
+- react-datepicker
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
