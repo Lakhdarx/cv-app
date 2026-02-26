@@ -1,5 +1,6 @@
 import DatePicker from "react-datepicker";
 import { useState } from "react";
+import "../styles/experience.css";
 
 export default function Experience({ data, setData }) {
   const [draft, setDraft] = useState(data);
@@ -20,7 +21,7 @@ export default function Experience({ data, setData }) {
   }
 
   return (
-    <section>
+    <section className="experience">
       <h3>Work Experience</h3>
       {!submitted ? (
         <form onSubmit={handleSubmit}>

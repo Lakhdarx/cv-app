@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/general.css";
 
 export default function GeneralInfo({ data, setData }) {
   const [draft, setDraft] = useState(data);
@@ -18,7 +19,7 @@ export default function GeneralInfo({ data, setData }) {
     setSubmitted(true);
   }
   return (
-    <section>
+    <section className="general">
       <h3>General Information</h3>
       {!submitted ? (
         <form onSubmit={handleSubmit}>
@@ -61,6 +62,7 @@ export default function GeneralInfo({ data, setData }) {
           <div>
             <label>Objective:</label>
             <textarea
+              rows={6}
               name="objective"
               value={draft.objective}
               onChange={handleChange}

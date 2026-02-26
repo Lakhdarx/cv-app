@@ -1,0 +1,4 @@
+.general form > div {
+  display: grid;
+  grid-template-columns: 120px 300px;
+}

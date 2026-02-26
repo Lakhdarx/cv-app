@@ -1,5 +1,6 @@
 import DatePicker from "react-datepicker";
 import { useState } from "react";
+import "../styles/education.css";
 
 export default function Education({ data, setData }) {
   const [draft, setDraft] = useState(data);
@@ -20,7 +21,7 @@ export default function Education({ data, setData }) {
   }
 
   return (
-    <section>
+    <section className="education">
       <h3>Educational Experience</h3>
       {!submitted ? (
         <form onSubmit={handleSubmit}>

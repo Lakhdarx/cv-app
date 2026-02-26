@@ -8,26 +8,27 @@ import CvPreview from "./components/CvPreview";
 
 function App() {
   const [info, setInfo] = useState({
-    name: "",
-    email: "",
-    phoneNumber: "",
-    address: "",
-    objective: "",
+    name: "John Smith",
+    email: "contact@topcv.me",
+    phoneNumber: "(660) 612 2918",
+    address: "Sample Address, NY, US",
+    objective:
+      "To apply media production and creative arts background and the skills gained as a student leader and a political campaign organizzer to an internship opportunity at CNN.",
   });
 
   const [education, setEducation] = useState({
-    schoolName: "",
-    city: "",
-    country: "",
-    major: "",
-    degree: "",
+    schoolName: "Georgia State University",
+    city: "Atlanta",
+    country: "US",
+    major: "Comp Sci",
+    degree: "Bachelor",
     startDate: null,
     endDate: null,
   });
 
   const [experience, setExperience] = useState({
-    companyName: "",
-    position: "",
+    companyName: "Obama for America, St. Louis, MO",
+    position: "Youth Vote Deputy Field Organizer",
     startDate: null,
     endDate: null,
   });

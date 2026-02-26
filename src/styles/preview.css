@@ -45,5 +45,10 @@ main .experience .more-info {
   grid-template-columns: 1fr 2fr;
 }
 
-main .experience .more-info {
+hr {
+  border: none;
+  height: 3px;
+  background-color: black;
+  margin: 20px 0;
+  border-radius: 5px;
 }
